@@ -1,0 +1,8 @@
+build
+frontend/node_modules
+.DS_Store
+*.log
+.vscode
+*.code-workspace
+notes
+frontend/package-lock.json

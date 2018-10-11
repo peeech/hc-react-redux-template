@@ -1,0 +1,68 @@
+body {
+    padding-top: 120px;
+}
+
+.highlight {
+    padding: 20px 40px !important;
+    margin-bottom: 14px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 6px;
+}
+
+.counter-number {
+    color: #fff;
+    height: 9rem;
+    width: 9rem;
+    font-size: 6rem;
+    border-radius: 50%;
+    background: #2196f3; /* Old browsers */
+    background: -moz-linear-gradient(top, #2196f3 0%, #74bbf2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #2196f3 0%,#74bbf2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #2196f3 0%,#74bbf2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    margin: 0 auto 1rem;
+}
+
+.counter-buttons {
+    width: 9rem;
+    margin: 0 auto 3rem;
+}
+.counter-button {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+.counter-buttons button{
+    width: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 100;
+}
+
+.form-group {
+    float: left;
+    width: calc(100% - 5rem);
+}
+
+.input-container button{
+    float:  right;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+.custom-checkbox li {
+    margin: 5px 0;
+}
+
+.checkmark {
+    float: right;
+    color: #20c997;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    text-align: center;
+    min-width: 1rem;
+    cursor: pointer;
+}
+.checkmark.red {
+    color: #e51c23;
+}

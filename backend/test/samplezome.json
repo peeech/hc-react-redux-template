@@ -1,0 +1,29 @@
+{
+  "Tests": [
+    {
+      "Convey": "auto-generated test for listEntryCreate",
+      "Zome": "sampleZome",
+      "FnName": "listEntryCreate",
+      "Input": {
+        "text": "potato"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for listEntryRead",
+      "Zome": "sampleZome",
+      "FnName": "listEntryRead",
+      "Input": "%h%",
+      "Output": {
+        "text": "potato"
+      }
+    },
+    {
+      "Convey": "auto-generated test for getAllEntries",
+      "Zome": "sampleZome",
+      "FnName": "getAllEntries",
+      "Input": "",
+      "Output": {}
+    }
+  ]
+}

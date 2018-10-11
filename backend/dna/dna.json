@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "UUID": "95654f55-cf94-467a-877e-a3fe7eb41042",
+  "Name": "HC-React-Redux-template",
+  "Properties": {
+    "description": "Holochain app built with React and Redux, template with documentation",
+    "language": "en"
+  },
+  "PropertiesSchemaFile": "properties_schema.json",
+  "DHTConfig": {
+    "HashType": "sha2-256"
+  },
+  "Zomes": [
+    {
+      "Name": "sampleZome",
+      "Description": "Sample Zome managing list entries",
+      "RibosomeType": "js",
+      "CodeFile": "samplezome.js",
+      "Entries": [
+        {
+          "Name": "listEntry",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "listEntry.json"
+        },
+        {
+          "Name": "linkToEntry",
+          "Required": true,
+          "DataFormat": "links",
+          "Sharing": "public"
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "listEntryCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "listEntryRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "getAllEntries",
+          "CallingType": "json",
+          "Exposure": "public"
+        }
+      ]
+    }
+  ]
+}
