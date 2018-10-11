@@ -3,7 +3,7 @@
 export const COUNTER_CHANGE = '[Data] Changed Counter';
 export const NEW_LIST_ENTRY = '[Data] Add new list entry';
 export const ADD_TO_DATA = '[Data] Add multiple entries to store.data';
-export const UPDATE_ENTRY_STATUS = '[Data] Update list entry status to 2';
+export const UPDATE_ENTRY_STATUS = '[Data] Update list entry status';
 
 // Initial state of store.data (see reducers.js)
 let INIT_DATA_STATE = {

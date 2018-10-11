@@ -103,9 +103,15 @@ UI of this demo consists of two components:
 - simple click counter
 - shopping list with the form
 
-State of a counter is stored locally in Redux state, while state of the list is stored on Holochain's DHT. Try making changes to both and then reload the page.
+State of a counter is stored locally in Redux state, while state of the list is stored on Holochain's DHT. Try making changes to both and then reload the page. 
+
+Once you run an app on multiple devices they will bootstrap to DHT via bootstrap server and start exchanging messages. This means each instance will see other instances' shopping list entries.
+
+At this point communication between server and front-end is over uni-directional HTTP protocol. Also HTTP polling was not implemented to keep this demo simple. Therefore you will have to reload page each time you want to receive fresh data from your server (eg. to see what shopping list elements others broadcasted to the network).
 
 This demo is [Redux Dev Tools](https://github.com/zalmoxisus/redux-devtools-extension) ready.
+
+Happy hacking.
 
 ## Built With
 
