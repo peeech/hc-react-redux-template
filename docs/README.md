@@ -11,13 +11,15 @@ Full Holochain application consists of:
 - holochain server communicating with other nodes over p2p network
 - front-end app loaded into browser window that communicates with hc server via API
 
-Code in this template has been separated into two logical parts - frontend and backend, which is convenient for development. Front-end is served by webpack server while back-end is running as a separate process only for exposing API.
+Code in this template has been separated into two logical parts - frontend and backend, which is convenient for development. Front-end is served by webpack server therefore allows for hot reloads while back-end is running on hcdev server as a separate process only for exposing API. At this point hcdev does not support hot reloads, therefore you need to restart it after each change to backend's code.
 
 In production though entire application is served by holochain server, therefore needs to be built and structured differently. Instructions how to compile for production have been included in [Compiling](#compiling) section.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development purposes. 
+
+[TODO] add tests :-)
 
 ## Prerequisites
 
@@ -29,7 +31,7 @@ hcd -v
 
 If you would like to install latest holochain-proto you can do it from [source](https://github.com/holochain/holochain-proto#go-based-install) or [download](https://github.com/holochain/holochain-proto/releases/) binaries.
 
-You will also need to have npm/yarn installed to run development server.
+You will also need to have npm/yarn installed to run compiling scripts and development server.
 
 ## Installing template
 
@@ -50,9 +52,8 @@ cd backend
 hcdev web 4141
 ```
 
-The front-end app is served at `http://localhost:3000`. Backend exposes API `http://localhost:4141`.
+The front-end app is served at `http://localhost:3000`. Backend exposes API at `http://localhost:4141`.
 
-Frontend is configured to hot reload during development, backend needs hcdev server restart after each change to backend's code.
 
 ## Folder structure
 
@@ -83,7 +84,7 @@ app
 
 If you want to complile your code to a self-contained applicatioin both `frontend` and `backend` need to meet in one folder containing entire application, say `build`.
 
-To do that change to `frontend` folder and run
+To do that `cd` to `frontend` folder and run
 
 ```
 npm run build:hc
@@ -123,7 +124,12 @@ Happy hacking.
 
 ## Authors
 
-[HoloDen](https://github.com/HoloDen/) cohort 2018
+Creted by [peeech](https://github.com/peeech).
+
+Based on [hc-ts-template](https://github.com/holochain/hc-ts-template) by:
+- Willem Olding - [willemolding](https://github.com/willemolding)
+- Michael Dougherty - [maackle](https://github.com/maackle)
+
 
 ## License
 
