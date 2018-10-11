@@ -12,7 +12,7 @@ function listEntryCreate(listEntryEntry) {
     var listEntryHash = commit("listEntry", listEntryEntry);
     commit("linkToEntry", {
         Links: [
-            {Base: App.Key.Hash, Link: listEntryHash, Tag: 'linkToEntry'}
+            {Base: App.DNA.Hash, Link: listEntryHash, Tag: 'linkToEntry'}
         ]
     });
     return listEntryHash;
@@ -24,7 +24,7 @@ function listEntryRead(listEntryHash) {
 }
 
 function getAllEntries(params) {
-    return getLinks(App.Key.Hash, "linkToEntry", {Load: true}).map(function(e) { return e.Entry });
+    return getLinks(App.DNA.Hash, "linkToEntry", {Load: true}).map(function(e) { return e.Entry });
 }
 
 
