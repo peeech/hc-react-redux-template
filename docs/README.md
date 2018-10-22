@@ -1,4 +1,4 @@
-# Holochain template 
+# Holochain React Redux demo app
 
 Basic holochain application serving as a template for further app development on [holochain](https://github.com/holochain) platform. 
 
@@ -33,7 +33,7 @@ If you would like to install latest holochain-proto you can do it from [source](
 
 You will also need to have npm/yarn installed to run compiling scripts and development server.
 
-## Installing template
+## Installing app
 
 Install the javascript packages with
 
@@ -53,6 +53,20 @@ hcdev web 4141
 ```
 
 The front-end app is served at `http://localhost:3000`. Backend exposes API at `http://localhost:4141`.
+
+## Demo app
+
+UI of this demo consists of two components: 
+- simple click counter
+- shopping list with the form
+
+State of a counter is stored locally in Redux state, while state of the list is stored on Holochain's DHT. Try making changes to both and then reload the page. 
+
+Once you run an app on multiple devices they will bootstrap to DHT via bootstrap server and start exchanging messages. This means each instance will see other instances' shopping list entries.
+
+At this point communication between server and front-end is over uni-directional HTTP protocol. Also HTTP polling was not implemented to keep this demo simple. Therefore you will have to reload page each time you want to receive fresh data from your server (eg. to see what shopping list elements others broadcasted to the network).
+
+This demo app is [Redux Dev Tools](https://github.com/zalmoxisus/redux-devtools-extension) ready.
 
 
 ## Folder structure
@@ -98,19 +112,12 @@ hcdev web 4141
 
 Now your application is running on `localhost:4141` entirely off holocahin server.
 
-## Demo app
+## Multi-node scenario
 
-UI of this demo consists of two components: 
-- simple click counter
-- shopping list with the form
+It is possible to simulate a multi user scenario locally on one machine. The easiest way to do it is by starting multiple holochain servers pointing to distinct identities, and serving data on different ports. 
 
-State of a counter is stored locally in Redux state, while state of the list is stored on Holochain's DHT. Try making changes to both and then reload the page. 
+After compiling an app into `/build` you will find a script there to spawn 3 separate instances of hcdev with 3 different identities. Run it with `./spawn_multi_hcdev.sh` and access those instances at `http://localhost:4141`, `http://localhost:4142` and `http://localhost:4143`.
 
-Once you run an app on multiple devices they will bootstrap to DHT via bootstrap server and start exchanging messages. This means each instance will see other instances' shopping list entries.
-
-At this point communication between server and front-end is over uni-directional HTTP protocol. Also HTTP polling was not implemented to keep this demo simple. Therefore you will have to reload page each time you want to receive fresh data from your server (eg. to see what shopping list elements others broadcasted to the network).
-
-This demo is [Redux Dev Tools](https://github.com/zalmoxisus/redux-devtools-extension) ready.
 
 Happy hacking.
 

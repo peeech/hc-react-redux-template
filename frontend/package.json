@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:hc": "mkdir -p ../build/ && cp -R ../backend/* ../build/ && npm run build && cp -R build/* ../build/ui && rm -R build/"
+    "build:hc": "mkdir -p ../build/ && cp -Rf ../backend/* ../build/ && npm run build && cp -Rf build/* ../build/ui && rm -R build/"
   },
   "eslintConfig": {
     "extends": "react-app"
