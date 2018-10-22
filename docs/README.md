@@ -101,7 +101,7 @@ If you want to complile your code to a self-contained applicatioin both `fronten
 To do that `cd` to `frontend` folder and run
 
 ```
-npm run build:hc
+./build.sh
 ```
 
 This will create a folder `/build` containing entire application. You can `cd` to `/build` and run
@@ -114,9 +114,10 @@ Now your application is running on `localhost:4141` entirely off holocahin serve
 
 ## Multi-node scenario
 
-It is possible to simulate a multi user scenario locally on one machine. The easiest way to do it is by starting multiple holochain servers pointing to distinct identities, and serving data on different ports. 
-
-After compiling an app into `/build` you will find a script there to spawn 3 separate instances of hcdev with 3 different identities. Run it with `./spawn_multi_hcdev.sh` and access those instances at `http://localhost:4141`, `http://localhost:4142` and `http://localhost:4143`.
+It is possible to simulate a multi user scenario locally on one machine. The easiest way to do it is by starting multiple holochain servers pointing to various identities, and serving data on different ports:
+- First you need to [compile](#compiling) an app into `/build`
+- Once this is done `cd` into `/build/` and run `./spawn_multi_hcdev.sh`
+- You can access those instances at `http://localhost:4141`, `http://localhost:4142` and `http://localhost:4143`.
 
 
 Happy hacking.
