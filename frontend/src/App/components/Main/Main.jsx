@@ -46,7 +46,7 @@ class Main extends React.Component{
     render(){
         return (
             <div>
-                <Header/>
+                <Header {...this.props.user}/>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-5 m-auto highlight">
@@ -98,7 +98,8 @@ class Main extends React.Component{
 const mapStateToProps = ( state ) => {
     return {
         numClicks: state.data.numClicks,
-        list: state.data.list
+        list: state.data.list,
+        user: state.data.user
     }
 };
 

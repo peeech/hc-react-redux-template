@@ -27,6 +27,14 @@ export const getAllEntries = () => {
 }
 
 /**
+ * Get user name from hc
+ * @return {Promise} Promise of a fetched result - user name 
+ */
+export const getUserName = () => {
+    return fetchPOST('/fn/sampleZome/getUserName').then(r => r.json());
+}
+
+/**
  * Commit list element as an entry into the DHT
  * @param {Object} obj - List element in a form of Object {'text': 'data'}
  * @return {Promise} Promise of a fetched result in a form of an array of all the entries

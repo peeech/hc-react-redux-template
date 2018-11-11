@@ -46,6 +46,11 @@
           "Name": "getAllEntries",
           "CallingType": "json",
           "Exposure": "public"
+        },
+        {
+          "Name": "getUserName",
+          "CallingType": "json",
+          "Exposure": "public"
         }
       ]
     }

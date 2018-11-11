@@ -27,6 +27,10 @@ function getAllEntries(params) {
     return getLinks(App.DNA.Hash, "linkToEntry", {Load: true}).map(function(e) { return e.Entry });
 }
 
+function getUserName() {
+    return {name: App.Agent.String};
+}
+
 
 // -----------------------------------------------------------------
 //  The Genesis Function https://developer.holochain.org/genesis

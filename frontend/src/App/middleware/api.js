@@ -1,6 +1,6 @@
-import { NEW_LIST_ENTRY, UPDATE_ENTRY_STATUS, ADD_TO_DATA } from '../ducks/data';
+import { NEW_LIST_ENTRY, UPDATE_ENTRY_STATUS, ADD_TO_DATA, UPDATE_USER } from '../ducks/data';
 import { INIT_UI } from '../ducks/ui';
-import { putEntry, getAllEntries } from '../hc_api/hc_api';
+import { putEntry, getAllEntries, getUserName } from '../hc_api/hc_api';
 
 const apiMiddleware = ( {dispatch} ) => next => action => {
     switch (action.type) {
@@ -14,7 +14,18 @@ const apiMiddleware = ( {dispatch} ) => next => action => {
                     })
                 })
                 // Catch any errors 
-                .catch(e => console.log(e));        
+                .catch(e => console.log(e));
+                
+            getUserName()
+                // on receive emit UPDATE_USER
+                .then(r => {
+                    dispatch({
+                        type: UPDATE_USER, 
+                        payload: r
+                    })
+                })
+                // Catch any errors 
+                .catch(e => console.log(e));
             
             return next(action);
 

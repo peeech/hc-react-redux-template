@@ -98,7 +98,7 @@ app
 
 If you want to complile your code to a self-contained applicatioin both `frontend` and `backend` need to meet in one folder containing entire application, say `build`.
 
-To do that `cd` to `frontend` folder and run
+To do that from project root directory run
 
 ```
 ./build.sh
@@ -116,9 +116,9 @@ Now your application is running on `localhost:4141` entirely off holocahin serve
 
 It is possible to simulate a multi user scenario locally on one machine. The easiest way to do it is by starting multiple holochain servers pointing to various identities, and serving data on different ports:
 - First you need to [compile](#compiling) an app into `/build`
-- Once this is done `cd` into `/build/` and run `./spawn_multi_hcdev.sh`
-- You can access those instances at `http://localhost:4141`, `http://localhost:4142` and `http://localhost:4143`.
-
+- Once this is done run `./spawn_multi_hcdev.sh` from app root dir
+- You can access those instances at `http://localhost:4141`, `http://localhost:4142` and `http://localhost:4143`
+- To kill all hcdev instances run `./kill_all_hcdev.sh`
 
 Happy hacking.
 
