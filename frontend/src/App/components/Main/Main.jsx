@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import './Main.css';
-import { COUNTER_CHANGE, NEW_LIST_ENTRY } from '../../ducks/data';
+import { NEW_LIST_ENTRY } from '../../ducks/data';
 
 class Main extends React.Component{
     constructor(props) {
@@ -51,15 +51,7 @@ class Main extends React.Component{
                     <div className="row">
                         <div className="col-lg-5 m-auto highlight">
                             <div className="counter-container">
-                                <div className="counter-number text-center">{this.props.numClicks}</div>
-                                <div className="counter-buttons">
-                                    <div className="counter-button">
-                                        <button className="btn btn-secondary btn-sm" onClick={this.props.onMinusClick}>-</button>
-                                    </div>
-                                    <div className="counter-button">
-                                        <button className="btn btn-secondary btn-sm" onClick={this.props.onPlusClick}>+</button>
-                                    </div>
-                                </div>
+                                <div className="counter-number text-center">{this.props.list.length}</div>
                                 <div className="input-container">
                                     <form onSubmit={this.handleSubmit}>
                                         <fieldset>
@@ -97,7 +89,6 @@ class Main extends React.Component{
 // Mapping of Redux state to Component's props
 const mapStateToProps = ( state ) => {
     return {
-        numClicks: state.data.numClicks,
         list: state.data.list,
         user: state.data.user
     }
@@ -108,18 +99,6 @@ const mapStateToProps = ( state ) => {
 const mapDispatchToProps = ( dispatch ) => {
     
     return {
-        onPlusClick: () => {
-            dispatch({
-                type: COUNTER_CHANGE,
-                payload: 1
-            });
-        },
-        onMinusClick: () => {
-            dispatch({
-                type: COUNTER_CHANGE,
-                payload: -1
-            });
-        },
         onSubmit: (val, i) => {
             dispatch({
                 type: NEW_LIST_ENTRY,
